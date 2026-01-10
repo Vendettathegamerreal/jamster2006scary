@@ -1,0 +1,399 @@
+
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.main-nav a {
+  color: rgba(246, 9, 71);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.jamster-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(131, 127, 127);
+}
+
+.jamster-box {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.jamster-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.jamster-box h2 {
+  border: 1px solid #131313;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.product-list {
+  display: grid;
+  gap: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #111;
+  padding: 10px;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.product::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.product img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #ff0000;
+}
+
+.product .info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.product .info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.button {
+  margin-left: auto;
+  background: rgba(246, 9, 71);
+  color: #fff;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: rgba(216, 236, 236);
+}
+
+.artist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artist-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+}
+
+.jamster-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  padding: 20px;
+  border-top: 1px solid #333;
+  position: relative;
+}
+
+.jamster-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.pagination .page {
+  padding: 8px 12px;
+  background: rgba(246, 9, 71);
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pagination .page:hover {
+  background: rgb(0, 0, 0);
+}
+
+.pagination .active {
+  background: #000;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.search-bar {
+  margin: 20px 0;
+  text-align: left;
+}
+
+#searchInput {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #131313;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  color: #fff;
+  width: 80%;
+  max-width: 400px;
+}
+
+.cover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.preview-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  width: 13px;
+  height: 13px;
+  background-image: url("assets/button-play.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.preview-btn.playing {
+  background-image: url("assets/button-pause.png");
+}
+
+.preview-btn.loading {
+  background-image: url("assets/button-load.png");
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  border: 2px solid #444;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30,30,30,0.6);
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  padding: 8px 14px;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(246, 9, 71, 0.9);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dots div {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background: transparent;
+}
+
+.carousel-dots .active {
+  background: rgba(246, 9, 71);
+  border-color: rgba(246, 9, 71);
+}
+
+.carousel-wrapper h2 {
+  margin-bottom: 40px;
+  position: relative;
+  border: 1px solid #131313;
+  font-size: 18px;
+  color: rgba(246, 9, 71);
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.carousel-wrapper h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
+  margin-bottom: 6px;
+}
+
+.other-revivals {
+  background: #1e2124;
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.other-revivals h2 {
+  font-size: 18px;
+  color: rgba(246, 9, 71);
+  margin-bottom: 20px;
+}
+
+.revival-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.revival-card {
+  background: #111;
+  border: 1px solid #333;
+  width: 280px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.revival-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #444;
+  margin-bottom: 10px;
+}
+
+.revival-card img:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+
+.revival-meta h3 {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.revival-meta p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 4px 0 0;
+  text-align: center;
+}
+
+.banner {
+  background: #111;
+  border: 1px solid #222;
+  padding: 3px;
+  margin: 12px auto;
+  max-width: 520px;
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 22%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.banner img {
+  width: 100%;
+  display: block;
+  border: 1px solid #333;
+}

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jamster</title>
+  <meta content="Jamster offers you ringtones, dial tones, mobile games, screensavers and music for your mobile phones. Massive selection only here at Jamster." name="description">
+  <meta name="author" content="Jamster Revival ARG" />
+  <meta name="publisher" content="Jamster Revival ARG" />
+  <meta name="copyright" content="(c) Jamster Revival ARG" />
+  <meta name="keywords" content="jamster, jamba, ringtones, schnuffel, mobile content, 2000s, horror">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+</head>
+<body class="jamster-theme">
+  <header class="jamster-header">
+  <div class="logo">
+     <img src="./logo.png" alt="Jamster logo" width="180" />
+  </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="comingsoon.html">Ringtones</a></li>
+        <li><a href="comingsoon.html">Games</a></li>
+        <li><a href="comingsoon.html">Apps</a></li>
+        <li><a href="comingsoon.html">Videos</a></li>
+        <li><a href="comingsoon.html">Graphics</a></li>
+        <li><a href="https://github.com/Vendettathegamerreal/jamster2006scary">Github</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="jamster-main">
+    <p>Welcome to the Jamster site! you can find ringtones, music, screensavers, wallpapers, videos, games, and more!</p>
+    <section id="ringtones" class="jamster-box">
+      <h2>Top Ringtones</h2>
+      <p>Get the latest ringtones on your mobile now. Choose from thousands of MP3 quality ring tones (realtones), fun tones & video ringtones</p>
+      <div class="product-list">
+     <article class="product">
+      <div class="cover-wrapper">
+      <img src="./static-glitch.gif" alt="Gummibär" />
+     </div>
+     <div class="info">
+      <h3>Yo Soy tu Gominola</h3>
+      <p>Osito Gominola</p>
+     </div>
+      <a href="./secret2/index.html" class="button">Get it</a>
+     </article>
+     <article class="product">
+      <div class="cover-wrapper">
+       <img src="./secret/Snufparent.webp" alt="Snufi" />
+      <div class="info">
+        <h3>Snufi Fiesta</h3>
+        <p>Snufi</p>
+       </div>
+        <a href="./secret/index.html" class="button">Get it</a>
+      </article>
+
+    </section>
+
+    <section id="games" class="jamster-box">
+      <h2>Top Mobile Games</h2>
+      <p>Here you will always find the latest mobile phone games.</p>
+      <div class="product-list">
+        <article class="product">
+          <img src="./static-glitch.gif" alt="Howie Heart" />
+          <div class="info">
+            <h3>Howie Heart: The Game</h3>
+          </div>
+          <a href="./404.png" class="button">Get it</a>
+        </article>
+        <article class="product">
+          <img src="./static-glitch.gif" alt="Mobile Disco" />
+          <div class="info">
+            <h3>Mobile Disco</h3>
+          </div>
+          <a href="./bart.png" class="button">Get It</a>
+        </article>
+      </div>
+    </section>
+    
+<section class="carousel-wrapper">
+  <h2>Most Popular Artists</h2>
+<section class="carousel" >
+  <div class="carousel-track">
+
+<div class="slide">
+  <a href="./secret/index.html" target="_blank">
+    <img src="./static-glitch.gif" alt="Schnuffel">
+  </a>
+</div>
+
+<div class="slide">
+  <a href="./secret2/index.html" target="_blank">
+    <img src="./static-glitch.gif" alt="Gummibär">
+  </a>
+</div>
+
+<div class="slide">
+  <a href="./secret/index.html" target="_blank">
+    <img src="./static-glitch.gif" alt="René La Taupe">
+  </a>
+</div>
+
+<div class="slide">
+  <a href="./secret/index.html" target="_blank">
+    <img src="./static-glitch.gif" alt="Crazy Cow">
+  </a>
+</div>
+
+<div class="slide">
+  <a href="./secret2/index.html" target="_blank">
+    <img src="./ezgif.com-resize.gif" alt="Bart Bash">
+  </a>
+</div>
+
+  </div>
+
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+
+  <div class="carousel-dots"></div>
+  </section>
+</section>
+  </main>
+
+  <footer class="jamster-footer">
+    <a href="https://jamster-revival.github.io/">▸ See the original</a>
+  </footer>
+
+<script>
+  
+// Carrousel script, hello world
+
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const dotsContainer = document.querySelector(".carousel-dots");
+
+let index = 0;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement("div");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+});
+
+const dots = Array.from(dotsContainer.children);
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  updateCarousel();
+}
+
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  updateCarousel();
+}
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    index = i;
+    updateCarousel();
+  });
+});
+
+setInterval(nextSlide, 4000);
+</script>
+
+<script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+    const previews = document.querySelectorAll(".preview-btn");
+
+    previews.forEach(btn => {
+        let audio = new Audio(btn.dataset.audio);
+        let isPlaying = false;
+
+        btn.addEventListener("click", () => {
+            if (!isPlaying) {
+                btn.classList.add("loading");
+                audio.play().then(() => {
+                    btn.classList.remove("loading");
+                    btn.classList.add("playing");
+                    isPlaying = true;
+                });
+
+                audio.addEventListener("ended", () => {
+                    btn.classList.remove("playing");
+                    isPlaying = false;
+                });
+
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                btn.classList.remove("playing");
+                isPlaying = false;
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
