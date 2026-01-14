@@ -1,7 +1,4 @@
-body{
-  background: url("./bart3d.png") repeat;
-  background-size: 64px 64px;
-}
+
 
 .main-nav {
   width: 100%;
@@ -399,4 +396,5 @@ body{
   width: 100%;
   display: block;
   border: 1px solid #333;
+
 }
