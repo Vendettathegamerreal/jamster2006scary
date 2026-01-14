@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<style>
+::-webkit-scrollbar{width:0em}
+::-webkit-scrollbar-track{background:#000}
+*{scrollbar-width:thin;scrollbar-color:#000 #000;image-rendering:pixelated}
+
+#curse,#pic-load{position:absolute}
+body{
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0
+}
+#video-load{position:relative;flex-direction:column}
+#video{width:640px;border:1px solid #666;position:relative}
+#pic-load{
+  top:0;left:0;width:100%;height:100%;
+  display:none;justify-content:center;align-items:center;
+  pointer-events:none;
+}
+#c11{
+  width:512px;
+  height:494px;
+  background:url("./gummibar.webp") center/contain no-repeat;
+  transform:scale(0);
+  transition:transform .08s linear;
+}
+
+#curse{
+  width:256px;height:30px;background:#0000;
+  bottom:81px;right:16px;z-index:3;user-select:none
+}
+#block{background:#00f;color:#fff;text-align:center;width:640px}
+#text{font-size:12px;padding-block:6px}
+
+@keyframes click{
+  0%{scale:0.996}
+  20%{scale:1.006}
+}
+</style>
+
+<body>
+
+<div id="video-load">
+  <video id="video" controls>
+    <source src="./robotlittle.mp4" type="video/mp4">
+  </video>
+
+  <div id="curse"></div>
+
+  <div id="block">
+    <p id="text">음... 왜 벨소리 관련 무서운 영상을 보고 있어?</p>
+  </div>
+
+  <div id="pic-load"><div id="c11"></div></div>
+</div>
+
+<script>
+const video = document.getElementById("video");
+const pc = document.getElementById("pic-load");
+const img = document.getElementById("c11");
+
+let screamerPlayed = false;
+
+/* preload */
+(new Image).src = "./gummibar.webp";
+
+/* back button trap */
+history.pushState(null,null,location.href);
+window.onpopstate = () => {
+  history.go(1);
+  new Audio("./error.mp3").play();
+  const v = document.getElementById('video-load');
+  v.style.animation='click 128ms steps(3) forwards';
+  setTimeout(()=>v.style.animation='none',160);
+};
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+
+/* block skipping */
+video.addEventListener("seeked",()=>{
+  if(video.currentTime>37){
+    video.currentTime = 37;
+    video.play().catch(()=>{});
+  }
+});
+
+/* main time handler */
+video.addEventListener("timeupdate",()=>{
+
+  if(video.currentTime>=35){
+    video.style.pointerEvents="none";
+    if(video.paused) video.play().catch(()=>{});
+  }else{
+    video.style.pointerEvents="auto";
+  }
+
+  if(video.currentTime>=43.14 && !screamerPlayed){
+    screamerPlayed = true;
+    pc.style.display="flex";
+
+    requestAnimationFrame(()=>{
+      img.style.transform="scale(2)";
+    });
+
+    new Audio("./oof.ogg").play();
+    new Audio("./error.mp3").play();
+
+    setTimeout(()=>location.href="/",2600);
+  }
+});
+</script>
+
+</body>

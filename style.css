@@ -1,4 +1,7 @@
-
+body{
+  background: url("static-glitch.gif") repeat;
+  background-size: 64px 64px;
+}
 
 .main-nav {
   width: 100%;
