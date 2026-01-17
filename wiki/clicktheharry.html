@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jamster</title>
+  <meta content="Jamster is peak" name="description">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/clicktheharry.css" />
+</head>
+
+<body>
+  <div id="cursor"></div>
+  <div id="bg"></div>
+  <div id="overlay"></div>
+
+  <div id="charcontainer">
+    <img src="/wiki/harry.png" alt="scary" width="180" />
+  </div>
+
+  <button id="anchor">Click me!</button>
+  <div id="chartext">^^^ Click here to meet Harry! ^^^</div>
+
+  <footer>
+    <img id="clickthebart" src="/wiki/test.jpg">
+
+    <style>
+      #clickthebart {
+        position: absolute;
+        left: 0;
+        top: -128px;
+        z-index: 100;
+        width: 100%;
+        height: calc(100% + 400px);
+        animation: clickthebartanimation 3600ms linear;
+        display: none;
+      }
+
+      @keyframes clickthebartanimation {
+        0%   { top: -128px; opacity: 0 }
+        10%  { top: -139px; opacity: 1 }
+        100% { top: -300px; opacity: 1 }
+      }
+    </style>
+
+    <script>
+      const clickthebartsound = new Audio("/wiki/scary.mp3");
+
+      function acre() {
+        const e = document.getElementById("clickthebart");
+        e.style.display = "block";
+        clickthebartsound.play();
+
+        document.body.style.overflow = "hidden";
+        document.body.style.margin = "0";
+        document.body.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          window.location.href = "/index.html";
+        }, 3600);
+      }
+
+      document.getElementById("anchor").addEventListener("click", acre);
+    </script>
+  </footer>
+</body>
+</html>

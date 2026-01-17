@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kala – Jamster</title>
+  <meta content="just kala page article" name="description">
+  <meta property="og:image" content="/wiki/justkala.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/characters.css" />
+</head>
+<body class="jamster-theme">
+  <header class="jamster-header">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/css/logo.png" alt="Jamster logo" width="180" />
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Ringtones</a></li>
+        <li><a href="/index.html">Games</a></li>
+        <li><a href="/index.html">Apps</a></li>
+        <li><a href="/videos.html">Videos</a></li>
+        <li><a href="/index.html">Graphics</a></li>
+        <li><a href="https://github.com/Vendettathegamerreal/jamster2006scary">Github</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div id="header-container" style="position:fixed;top:0;"></div>
+  <div id="container" style=overflow:visible><div id="text-content">
+    <h1 style="padding-bottom: 42px; border-bottom: solid 1px #500;">Kala</h1>
+        <div class="text-entry">
+                <h2><img src="/wiki/embed.jpg" alt="who is this" width="180" /></h2>
+                <p>Kala the Cat is fearless, kindhearted and likes to take charge. A loyal friend, she is usually the one with the best ideas and is not shy to let the 'Boys' know 'She is the Boss'.</p>
+            </div>
+        <div class="text-entry">
+                <h2>Friends</h2>
+                <p><a href="/wiki/harry.html">Harry</a></p>
+                <p><a href="/wiki/gummibar.html">Gummibar</a></p>
+            </div>
+        <div class="text-entry">
+                <h2>???</h2>
+                <p>domer ☑ domer ☑ domer ☑ domer ⚠</p>
+            </div>
+                        </div>
+<div id="image-frame"> <div class="textbox">Appearance:</div> <div class="appearance-buttons">
+</div>
+<div id="image-container" style="height:241px;position:relative;overflow:hidden">
+<img src="/wiki/justkala.png" alt="just kala">
+</div>
+<div class="infobox">im like half-life</div> </div> </div>
+<div id="warningp"></div>
+
+<script>
+const warningp = document.getElementById("warningp");
+const ems = new Audio('/wiki/alarm.mp3');
+
+function ovs() {
+  warningp.innerHTML = '⚠<br>DOMER IS BACKUP<br>DO NOT MOVE';
+  warningp.style.cssText = `
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:#700;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:32;
+    font-size:2em;
+    text-align:center;
+  `;
+  ems.loop = true;
+  ems.play();
+}
+
+function ovh() {
+  warningp.style.display = "none";
+  ems.pause();
+  ems.loop = false;
+}
+
+setTimeout(ovs, 10000);
+setTimeout(ovh, 20000);
+</script>
+
+
+</body> 
+</html>

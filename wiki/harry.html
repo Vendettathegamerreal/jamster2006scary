@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harry – Jamster</title>
+  <meta content="just harry page article" name="description">
+    <meta property="og:image" content="/wiki/harry.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/characters.css" />
+</head>
+<body class="jamster-theme">
+  <header class="jamster-header">
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/css/logo.png" alt="Jamster logo" width="180" />
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Ringtones</a></li>
+        <li><a href="/index.html">Games</a></li>
+        <li><a href="/index.html">Apps</a></li>
+        <li><a href="/videos.html">Videos</a></li>
+        <li><a href="/index.html">Graphics</a></li>
+        <li><a href="https://github.com/Vendettathegamerreal/jamster2006scary">Github</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div id="header-container" style="position:fixed;top:0;"></div>
+  <div id="container" style=overflow:visible><div id="text-content">
+    <h1 style="padding-bottom: 42px; border-bottom: solid 1px #500;">Harry</h1>
+        <div class="text-entry">
+                <h2>who is this?</h2>
+                <img src="/wiki/embed.jpg" alt="who is this" width="180" />
+            </div>
+        <div class="text-entry">
+                <h2>uh...</h2>
+                <p><a href="/wiki/clicktheharry.html">Click the Harry</a></p>
+            </div>
+        <div class="text-entry">
+                <h2>???</h2>
+                <p>Harry the Chameleon is the smart one of the gang, but the least confident. He is sensitive and insecure. He can change colors, but his color changing gives away his moods & emotions.</p>
+            </div>
+                        </div>
+<div id="image-frame"> <div class="textbox">Appearance:</div> <div class="appearance-buttons">
+</div>
+<div id="image-container" style="height:241px;position:relative;overflow:hidden">
+<img src="/wiki/harry.png" onclick="acre()" style="cursor:pointer">
+</div>
+<div class="infobox">who is this</div> </div> </div>
+
+<footer>
+
+  <style>
+    #gummibaragain{
+      position:absolute;
+      left:0;
+      top:-128px;
+      z-index:100;
+      width:100%;
+      height:calc(100% + 400px);
+      animation:gummibaragainanimation 3600ms linear;
+      display:none
+    }
+    @keyframes gummibaragainanimation{
+      0%{top:-128px;opacity:0}
+      10%{top:-139px;opacity:1}
+      100%{top:-300px;opacity:1}
+    }
+  </style>
+
+    <script>
+    const audioplaying = new Audio("/wiki/sound.mp3");
+    let hasPlayed = false;
+
+    function acre() {
+        if (hasPlayed) return;
+
+        hasPlayed = true;
+
+        const img = document.querySelector("#image-container img");
+        img.src = "/wiki/embed.jpg";
+
+        audioplaying.currentTime = 0;
+        audioplaying.play();
+
+        document.body.style.overflow = "hidden";
+        document.body.style.pointerEvents = "none";
+
+        audioplaying.onended = () => {
+        window.location.href = "/wiki/clicktheharry.html"; // redirect to click the harry
+        };
+    }
+    </script>
+
+
+</footer>
+
+</body> 
+</html>
