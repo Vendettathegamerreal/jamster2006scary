@@ -1,5 +1,5 @@
 body{
-  background: url("/static-glitch.gif") repeat;
+  background: url("./background.jpg") repeat;
   background-size: 64px 64px;
 }
 
